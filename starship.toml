@@ -1,0 +1,96 @@
+# Inserts a blank line between shell prompts
+# $git_commit\
+
+# $custom\ 
+#Prompt Format
+
+format = """
+$username\
+$directory\
+$git_state\
+$git_branch\
+$git_status\
+$python\
+$conda\
+$nodejs\
+
+\n
+"""
+add_newline = true
+# Replace the "❯" symbol in the prompt with "➜"
+command_timeout = 30000
+[character]
+success_symbol = "[ ﰄ](blue)➜[](#E400B3)[](blue)(#E400B3) "
+#error_symbol = " ﮏ  "
+#wget_symbol = "爵ﱺﱺﱺﱺﱺﱺ"
+error_symbol = "  勞勞 "
+disabled = false
+format="[$success_symbol](#E400B3)[$error_symbol](bold blue)"
+[custom]
+symbol = "[ﮊ](#E400B3)"
+disabled = false
+#sleeprobot symbol = "  鈴 鈴"
+#conda Display
+[conda]
+truncation_length = 3
+format = "[](#E400B3)[](#00e5ff)[](#E400B3)[](#00e5ff)[](#E400B3)[](#00e5ff)[更更](#E400B3)[$environment](bold blue)[ ](bold green)"
+#format = "[$environment$symbol]"
+disabled = false
+
+#directory
+[directory]
+truncation_length = 10
+format = "[ﮊ](#E400B3)[](#47fff6)[](#E400B3)[](#47fff6)[](#E400B3)[](#47fff6)[$read_only $path](#47fff6)[  ](bold green)"
+home_symbol = "ﴥ"
+read_only = "🔒"
+disabled = false
+
+#nodejs
+[nodejs]
+format = "[](#E400B3)[](#47fff6)[](#E400B3)[](#47fff6) [](#E400B3)"
+detect_extensions = ["js", "mjs", "cjs", "ts"]
+#detect_files list the files that trigger this module
+detect_files = ["package.json", ".node-version"]
+disabled = false
+[git_branch]
+format = "[ $branch ](#45ffb8)[(on |@$remote_name)(|שׂ@$remote_branch)](#f2f2ff)[](#7df6ff)[](#E400B3)[](#7df6ff) "
+
+[git_status]
+conflicted = ""
+ahead = ""
+behind = ""
+diverged = "勤${ahead_count}免${behind_count}"
+up_to_date = ""
+untracked = " holup"
+stashed = "[ ](#E400B3)"
+modified = "[  |](#47fff6)"
+staged = '[++\($count\)](green)'
+renamed = "NameTaargus"
+deleted = "ﮏ"
+
+[git_state]
+format = "[ $state ](#f2f2ff)[](#7df6ff)[](#E400B3)[](#7df6ff)[|$progress_current/$progress_total](#42aaff)|[ ﰄ](#42aaff)➜[](#E400B3)[](#42aaff)(#E400B3)"
+
+[python]
+format = "[](#E400B3)[](blue)[](#E400B3)[](blue)[](#E400B3)[$virtualenv](bold blue)[](#E400B3)"
+#style = "bold #E400B3"
+detect_files = [".python-version", "Pipfile", "__init__.py", "pyproject.toml", "requirements.txt", "setup.py"]
+detect_extensions = ["py", "ipynb"]
+python_binary = ["python3", "python2"]
+detect_folders = ["~/Python"]
+disabled = false
+[rlang]
+format = "[](#E400B3)[](blue)[](#E400B3)[](blue)[](#E400B3)[](blue)[](#E400B3)[R $version](bold blue) [](#E400B3) "
+detect_extensions = ["R", "Rd", "Rmd", "Rproj", "Rsx"]
+disabled = false
+[shell]
+bash_indicator = ""
+disabled = false
+[status]
+format = "[ﰄ](#E400B3)[](blue)[ﳝ](#E400B3)[ﳝ](blue)[ﳝ](#E400B3)"
+not_found_symbol = "ﮊ[](red)  [勞勞](blue)[](red)"
+not_executable_symbol = "[](blue)[](#E400B3)[](blue) [](#E400B3) [鈴 鈴](blue)"
+sigint_symbol = "[](red) [ﮏ](#E400B3)[ ](red)[](blue)"
+signal_symbol = "[豈](#E400B3)[=](blue)[](red)"
+recognize_signal_code = true
+map_symbol = true
